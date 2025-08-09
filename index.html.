@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Website của tôi</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; background: #f0f0f0; }
+        h1 { color: #333; }
+        p { font-size: 18px; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Xin chào!</h1>
+    <p>Đây là website miễn phí đầu tiên của tôi.</p>
+</body>
+</html>
