@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Free IELTS Practice Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f4f6f8; }
+        h1 { text-align: center; color: #333; }
+        .question { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #218838; }
+        .result { font-size: 20px; margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1>Free IELTS Practice Test</h1>
+
+    <div class="question">
+        <p><strong>1. Choose the correct word:</strong>  
+        He is interested ____ learning English.</p>
+        <label><input type="radio" name="q1" value="A"> at</label><br>
+        <label><input type="radio" name="q1" value="B"> on</label><br>
+        <label><input type="radio" name="q1" value="C"> in</label>
+    </div>
+
+    <div class="question">
+        <p><strong>2. Which is correct?</strong></p>
+        <label><input type="radio" name="q2" value="A"> She don’t like coffee.</label><br>
+        <label><input type="radio" name="q2" value="B"> She doesn’t likes coffee.</label><br>
+        <label><input type="radio" name="q2" value="C"> She doesn’t like coffee.</label>
+    </div>
+
+    <div class="question">
+        <p><strong>3. Reading:</strong>  
+        "Global warming is a serious issue."  
+        What does "serious" mean?</p>
+        <label><input type="radio" name="q3" value="A"> Not important</label><br>
+        <label><input type="radio" name="q3" value="B"> Important</label><br>
+        <label><input type="radio" name="q3" value="C"> Funny</label>
+    </div>
+
+    <div style="text-align:center;">
+        <button onclick="checkAnswers()">Nộp bài</button>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let correct = {
+                q1: "C",
+                q2: "C",
+                q3: "B"
+            };
+            let score = 0;
+            let total = Object.keys(correct).length;
+
+            for (let q in correct) {
+                let answer = document.querySelector(`input[name="${q}"]:checked`);
+                if (answer && answer.value === correct[q]) {
+                    score++;
+                }
+            }
+
+            let percent = Math.round((score / total) * 100);
+            document.getElementById("result").innerHTML = 
+                `Bạn đúng ${score}/${total} câu (${percent}%).`;
+        }
+    </script>
+
+</body>
+</html>
